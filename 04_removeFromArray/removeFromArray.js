@@ -9,12 +9,12 @@ source item. The function will return newArray; it is the source array
 with target values excluded.
 */
 
-const removeFromArray = function(source, target) {
+const removeFromArray = function(source, ...target) {
     const newArray = [];
     let differenceCheck;
     for (let i = 0; i < source.length; i++) {
-        for (let j = 1; j < arguments.length; j++)
-            if (source[i] !== arguments[j]) {
+        for (let j = 0; j < target.length; j++)
+            if (source[i] !== target[j]) {
                 differenceCheck = true;
             } else {
                 differenceCheck = false;
